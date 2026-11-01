@@ -20,22 +20,22 @@ function App() {
 
   // Check for winner or draw
   useEffect(() => {
-    const result = calculateWinner(board);
+    const resul2 = calculateWinner(board);
     
-    if (result) {
+    if (result2) {
       setGameStatus('won');
-      setWinningLine(result.line);
+      setWinningLine(result2.line);
       
       // Update scores
       setScores(prevScores => ({
         ...prevScores,
-        [result.winner]: prevScores[result.winner as keyof typeof prevScores] + 1
+        [result2.winner]: prevScores[result2.winner as keyof typeof prevScores] + 1
       }));
       
       // Add to history
       setGameHistory(prev => [
         ...prev, 
-        { winner: result.winner, board: [...board], date: new Date() }
+        { winner: result2.winner, board: [...board], date: new Date() }
       ]);
     } else if (checkDraw(board)) {
       setGameStatus('draw');
