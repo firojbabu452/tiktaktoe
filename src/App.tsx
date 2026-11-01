@@ -20,7 +20,7 @@ function App() {
 
   // Check for winner or draw
   useEffect(() => {
-    const resul2 = calculateWinner(board);
+    const result2 = calculateWinner(board);
     
     if (result2) {
       setGameStatus('won');
